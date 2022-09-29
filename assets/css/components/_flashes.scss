@@ -1,0 +1,35 @@
+.flash-container {
+    &:before {
+        content:"";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 1060;
+    }
+
+    .flash {
+        width: 450px;
+        max-width: 100%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        margin: 0 !important;
+        transition: top 0.2s;
+        z-index: 1070;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, .5);
+        background: white;
+        padding: 2.5rem;
+        text-align: center;
+
+        span {
+            font-size: 5rem;
+        }
+    }
+}

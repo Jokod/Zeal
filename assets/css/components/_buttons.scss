@@ -1,0 +1,30 @@
+.btn {
+  border-radius: 3px;
+
+  &-link {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+.btn-circle {
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &.btn-sm {
+    height: 1.3rem;
+    width: 1.3rem;
+    font-size: 0.65rem;
+  }
+
+  &.btn-lg {
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.20rem;
+  }
+}

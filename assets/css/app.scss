@@ -1,0 +1,41 @@
+@charset 'utf-8';
+
+@import "utils/_variables";
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+/*! Utilities */
+@import "utils/_reset";
+@import "utils/_mixins";
+@import "utils/_classes";
+@import "utils/_fonts";
+@import "utils/_responsive";
+@import "utils/_print";
+
+/*! Components */
+@import "components/_border";
+@import "components/_buttons";
+@import "components/_text";
+@import "components/_wrapper";
+@import "components/_flashes";
+
+/*! Layout */
+// @import "layout/_header";
+// @import "layout/_footer";
+
+/*! Pages */
+// @import "pages/_login";
+
+.layout {
+    @include baseText();
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    &__content {
+        flex: 1 0 auto;
+    }
+}
