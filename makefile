@@ -84,6 +84,9 @@ cc: ## Clear the cache. DID YOU CLEAR YOUR CACHE????
 permissions: ## Fix permissions of all var files
 	chmod -R 777 var/*
 
+fixtures:
+	$(CONSOLE) doctrine:fixtures:load -n
+
 ## —— Quality insurance ✨ ——————————————————————————————————————————————————————
 check: requirements security cs phpstan ## Run all coding standards checks
 
