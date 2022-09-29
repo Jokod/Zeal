@@ -1,0 +1,23 @@
+{% set flashes = app.flashes %}
+
+{% if flashes|length > 0 %}
+    <div class="flash-container">
+        {% for message in flashes.success|default([]) %}
+            <div class="flash border-top border-success border-3" role="alert">
+                <span>🥳</span>
+                <h3 class="text-dark">Félicitations</h3>
+                <p class="text-body">{{ message|nl2br }}</p>
+                <button type="button" class="btn btn-success">Continuer</button>
+            </div>
+        {% endfor %}
+
+        {% for message in flashes.error|default([]) %}
+            <div class="flash border-top border-danger border-3" role="alert">
+                <span>🤯</span>
+                <h3 class="text-dark">Oups!</h3>
+                <p class="text-body">{{ message|nl2br }}</p>
+                <button type="button" class="btn btn-danger">Réessayer</button>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

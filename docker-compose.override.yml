@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+    db:
+        environment:
+            - MYSQL_ROOT_PASSWORD=zeal
+            - MYSQL_DATABASE=zeal
+
+    phpmyadmin:
+        container_name: zeal-phpmyadmin
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - 4244:80
+        depends_on:
+            - db
+        environment:
+            - PMA_HOST=db
+            - PMA_USER=root
+            - PMA_PASSWORD=zeal
+
+    mailer:
+        image: schickling/mailcatcher
+        ports: [1025, 1080]

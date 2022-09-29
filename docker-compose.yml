@@ -1,0 +1,17 @@
+version: '3.2'
+
+services:
+    db:
+        container_name: zeal-db
+        image: mysql:8.0
+        ports:
+            - 4241:3306
+
+    mailer:
+        container_name: zeal-mailer
+        image: mailhog/mailhog
+        logging:
+            driver: 'none'  # disable saving logs
+        ports:
+            - 4245:1025 # smtp server
+            - 4246:8025 # web ui
