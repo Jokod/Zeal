@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block body %}
+    <div class="d-flex flex-column align-items-center justify-content-center vh-100">
+        {% block container %}{% endblock container %}
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('login') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('login') }}
+{% endblock %}
+

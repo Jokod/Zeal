@@ -1,0 +1,17 @@
+{% set breadcrumbs_array = knp_menu_get_breadcrumbs_array(knp_menu_get_current_item('main')) %}
+
+{% if breadcrumbs_array|length > 1 %}
+    <ol class="breadcrumb">
+        {% for breadcrumb_item in breadcrumbs_array %}
+            {% if loop.last %}
+                <li class="breadcrumb-item active" aria-current="page">{{ breadcrumb_item.label }}</li>
+            {% elseif not loop.first %}
+                {% if breadcrumb_item.uri %}
+                    <li class="breadcrumb-item"><a href="{{ breadcrumb_item.uri }}">{{ breadcrumb_item.label }}</a></li>
+                {% else %}
+                    <li class="breadcrumb-item">{{ breadcrumb_item.label }}</li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </ol>
+{% endif %}

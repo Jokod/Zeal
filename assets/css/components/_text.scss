@@ -1,10 +1,17 @@
-@mixin baseText {
+body {
   @include fontMontserrat();
+  background: #f6f9ff;
+  color: #444444;
 }
 
 a {
-  color: inherit;
+  color: #4154f1;
   text-decoration: none;
+  outline: none;
+
+  &:hover {
+    color: #717ff5;
+  }
 }
 
 b {

@@ -8,8 +8,6 @@ $breakpoints: (
     "wide-desktop":   1440px
 );
 
-$container-margin: 3rem;
-
 // Colors
 $white:    #fff;
 $gray-100: #f8f9fc;
@@ -22,14 +20,6 @@ $gray-700: #706A6B;
 $gray-800: #5a5c69;
 $gray-900: #3a3b45;
 $black:    #000;
-
-$primary:   #006797;
-$secondary: #ff9900;
-$success:   #71D875;
-$warning:   #FF9800;
-$danger:    #FF5274;
-$light:     $gray-200;
-$dark:      $gray-700;
 
 $indigo:  #6610f2;
 $purple:  #6f42c1;
@@ -44,14 +34,11 @@ $teal:    #20c9a6;
 $cyan:    #36b9cc;
 $cyan-90: #009AD8;
 
-/*! Fonts */
-@mixin fontMontserrat($size: 1rem, $color: $black, $weight: 400, $lineHeight: 2rem) {
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-  font-size: $size;
-  color: $color;
-  font-weight: $weight;
-  line-height: $lineHeight;
-}
+$font-weight-light:  200;
+$font-weight-normal: 400;
+$font-weight-bold:   700;
+
+$text-muted: $gray-600;
 
 // Borders
 $border-radius: 0.35rem;
@@ -65,22 +52,20 @@ $border-sizes: (
   5: 2rem
 );
 
-// Tables
-$table-cell-padding:          .5rem;
-//$table-cell-padding-sm:       .3rem !default;
-//$table-color:                 $body-color !default;
-$table-bg:                    $white;
-$table-accent-bg:             rgba($black, .05);
-//$table-hover-color:           $table-color !default;
-$table-hover-bg:              rgba($primary, .075);
-//$table-active-bg:             $table-hover-bg !default;
-//$table-border-width:          1;
-//$table-border-color:          $border-color !default;
-$table-head-bg:               $gray-100;
-$table-head-color:            $gray-800;
-$table-striped-order:         odd !default;
-//$table-bg-level:              -9 !default;
-//$table-border-level:          -6 !default;
+$card-cap-bg: $gray-100;
+$card-border-color: $border-color;
+
+// Breadcrumbs
+$breadcrumb-font-size:              1rem;
+$breadcrumb-padding-y:              0;
+$breadcrumb-padding-x:              0;
+$breadcrumb-item-padding:           .4rem;
+$breadcrumb-margin-bottom:          0;
+$breadcrumb-bg:                     transparent;
+$breadcrumb-divider-color:          $gray-500;
+$breadcrumb-active-color:           $gray-500;
+$breadcrumb-divider:                quote(">");
+$breadcrumb-border-radius:          $border-radius;
 
 /*! Easing */
 $ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);

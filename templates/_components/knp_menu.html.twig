@@ -1,0 +1,58 @@
+{% extends 'knp_menu.html.twig' %}
+
+{% block list %}
+    {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
+        {% import 'knp_menu.html.twig' as knp_menu %}
+
+        {% set listAttributes = listAttributes|merge({class: (listAttributes.class|default('') ~ ' list-unstyled m-0')|trim}) -%}
+
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block item %}
+    {% if item.level == 1 %}
+        {% set attributes = item.attributes|merge({class: (item.attributes.class|default('') ~ ' nav-item')|trim}) -%}
+        {% do item.setAttributes(attributes) %}
+    {% endif %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block linkElement %}
+    {% import 'knp_menu.html.twig' as knp_menu %}
+
+    {% set linkClass = item.linkAttributes.class|default('') %}
+
+    {% if item.level == 1 %}
+        {% set linkClass = linkClass ~ ' nav-link' %}
+    {% endif %}
+
+    {%- if matcher.isCurrent(item) %}
+        {%- set linkClass = linkClass ~ ' ' ~ options.currentClass %}
+    {% endif %}
+
+    {% set attributes = item.linkAttributes|merge({class: linkClass|trim}) -%}
+
+    <a href="{{ item.uri }}"{{ knp_menu.attributes(attributes) }}>
+        {{ block('label') }}
+    </a>
+{% endblock %}
+
+{% block spanElement %}
+    {% import 'knp_menu.html.twig' as knp_menu %}
+
+    {% set attributes = item.labelAttributes|merge({class: (item.labelAttributes.class|default('') ~ ' nav-link')|trim}) -%}
+
+    <a{{ knp_menu.attributes(attributes) }} href="#" data-toggle="collapse" data-target="#collapse-{{ item.name }}" aria-expanded="true" aria-controls="collapse-{{ item.name }}">
+        {{ block('label') }}
+    </a>
+{% endblock %}
+
+{% block label %}
+    {% if item.extra('icon') is not null %}
+        <i class="fas fa-fw {{ item.extra('icon') }}"></i>
+    {% endif %}
+
+    <span>{{ parent() }}</span>
+{% endblock %}
