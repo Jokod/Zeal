@@ -1,0 +1,15 @@
+{% extends "layouts/base.html.twig" %}
+
+{% block body %}
+
+    {% include '_partials/header.html.twig' %}
+
+    {% include '_partials/sidebar.html.twig' %}
+
+    <main id="main" class="main">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include '_partials/footer.html.twig' %}
+
+{% endblock %}
