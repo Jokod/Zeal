@@ -7,12 +7,12 @@ use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
 use App\Security\LoginAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 
 class SecurityController extends AbstractController
@@ -24,7 +24,7 @@ class SecurityController extends AbstractController
     #[Route(path: '/login', name: 'login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        if ($this->userRepository->countUsers() === 0) {
+        if (0 === $this->userRepository->countUsers()) {
             return $this->redirectToRoute('first_register');
         }
 
@@ -32,7 +32,7 @@ class SecurityController extends AbstractController
             return $this->redirectToRoute('dashboard');
         }
 
-        $error = $authenticationUtils->getLastAuthenticationError();
+        $error        = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('pages/security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
@@ -46,8 +46,7 @@ class SecurityController extends AbstractController
         LoginAuthenticator $authenticator,
         EntityManagerInterface $entityManager
     ): Response {
-
-        if ($this->userRepository->countUsers() !== 0) {
+        if (0 !== $this->userRepository->countUsers()) {
             return $this->redirectToRoute('login');
         }
 
@@ -57,7 +56,6 @@ class SecurityController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
                     $user,

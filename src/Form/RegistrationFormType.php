@@ -4,14 +4,14 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class RegistrationFormType extends AbstractType
 {
@@ -20,21 +20,21 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label' => 'Nom d\'utilisateur',
-                'attr' => [
-                    'placeholder' => 'Exemple'
+                'attr'  => [
+                    'placeholder' => 'Exemple',
                 ],
             ])
             ->add('email', EmailType::class, [
                 'attr' => [
-                    'placeholder' => 'exemple@exemple.com'
+                    'placeholder' => 'exemple@exemple.com',
                 ],
             ])
             ->add('plainPassword', RepeatedType::class, [
                 'type'          => PasswordType::class,
                 'first_options' => [
-                    'attr'        => [
+                    'attr' => [
                         'autocomplete' => 'new-password',
-                        'placeholder' => '************',
+                        'placeholder'  => '************',
                     ],
                     'constraints' => [
                         new NotBlank([
@@ -43,20 +43,20 @@ class RegistrationFormType extends AbstractType
                         new Length([
                             'min'        => 6,
                             'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères',
-                            'max' => 4096,
+                            'max'        => 4096,
                         ]),
                     ],
                     'label' => 'Nouveau mot de passe',
                 ],
                 'second_options' => [
-                    'attr'  => [
+                    'attr' => [
                         'autocomplete' => 'new-password',
-                        'placeholder' => '************',
+                        'placeholder'  => '************',
                     ],
                     'label' => 'Répéter le mot de passe',
                 ],
                 'invalid_message' => 'Les champs de mot de passe doivent correspondre.',
-                'mapped' => false,
+                'mapped'          => false,
             ])
         ;
     }
