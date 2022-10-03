@@ -1,5 +1,5 @@
 body {
-  @include fontMontserrat();
+  @include fontNunito();
   background: #f6f9ff;
   color: #444444;
 }
@@ -14,10 +14,6 @@ a {
   }
 }
 
-b {
-  font-weight: bold;
-}
-
 hr {
   width: 100%;
   background-color: $black;
@@ -27,12 +23,4 @@ hr {
 small, .small {
   font-size: 12px;
   color: $gray-700;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-}
-
-i {
-  font-size: 2rem;
 }

@@ -1,0 +1,33 @@
+.pagetitle {
+    margin-bottom: 1.3rem;
+}
+
+.pagetitle h1 {
+    font-size: 24px;
+    margin-bottom: .2rem;
+    font-weight: 700;
+    color: #012970;
+}
+
+.breadcrumb {
+	font-size: 14px;
+	color: #899bbd;
+}
+
+.breadcrumb a {
+	color: #899bbd;
+	transition: 0.3s;
+}
+
+.breadcrumb a:hover {
+	color: #51678f;
+}
+
+.breadcrumb .breadcrumb-item::before {
+	color: #899bbd;
+}
+
+.breadcrumb .active {
+	color: #51678f;
+	font-weight: 600;
+}

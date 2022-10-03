@@ -21,7 +21,9 @@ class MenuBuilder
     {
         $menu = $this->factory->createItem('root');
 
-        $menu->addChild('companies', ['route' => 'dashboard', 'label' => 'Entreprises', 'extras' => ['icon' => 'fa-city'], 'displayChildren' => false]);
+        $home = $menu->addChild('home', ['label' => 'Home', 'displayChildren' => false]);
+
+        $home->addChild('dashboard', ['route' => 'dashboard', 'label' => 'Dashboard', 'displayChildren' => false]);
 
         return $menu;
     }

@@ -16,12 +16,13 @@
 @import "components/_buttons";
 @import "components/_text";
 @import "components/_flashes";
+@import "components/_breadcrumb";
 
 /*! Layout */
 @import "layouts/_header";
 @import "layouts/header/navigation";
 @import "layouts/_sidebar";
-// @import "layouts/_footer";
+@import "layouts/_footer";
 
 @import "pages/_error";
 

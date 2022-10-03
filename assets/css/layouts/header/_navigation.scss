@@ -31,7 +31,7 @@
 
 	& .badge-number {
 		position: absolute;
-		inset: -2px -5px auto auto;
+		inset: 0 0 auto auto;
 		font-weight: normal;
 		font-size: 12px;
 		padding: 3px 6px;
@@ -39,7 +39,7 @@
 	}
 
 	& .notifications {
-		inset: 8px -15px auto auto !important;
+		inset: 8px -90px auto auto !important;
 
 		& .notification-item {
 			display: flex;

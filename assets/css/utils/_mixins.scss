@@ -3,8 +3,8 @@
 ******************************************************************/
 
 /*! Fonts */
-@mixin fontMontserrat($size: 14px, $color: $black, $weight: 400, $lineHeight: 1rem) {
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+@mixin fontNunito($size: 14px, $color: $black, $weight: 400, $lineHeight: inherit) {
+  font-family: 'Nunito', Helvetica, Arial, sans-serif;
   font-size: $size;
   color: $color;
   font-weight: $weight;

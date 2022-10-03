@@ -32,7 +32,6 @@ $brown:   #2d0a09;
 $blue:    #0275A3;
 $teal:    #20c9a6;
 $cyan:    #36b9cc;
-$cyan-90: #009AD8;
 
 $font-weight-light:  200;
 $font-weight-normal: 400;
@@ -56,14 +55,14 @@ $card-cap-bg: $gray-100;
 $card-border-color: $border-color;
 
 // Breadcrumbs
-$breadcrumb-font-size:              1rem;
+$breadcrumb-font-size:              1.3rem;
 $breadcrumb-padding-y:              0;
 $breadcrumb-padding-x:              0;
 $breadcrumb-item-padding:           .4rem;
 $breadcrumb-margin-bottom:          0;
 $breadcrumb-bg:                     transparent;
 $breadcrumb-divider-color:          $gray-500;
-$breadcrumb-active-color:           $gray-500;
+$breadcrumb-active-color:           $gray-900;
 $breadcrumb-divider:                quote(">");
 $breadcrumb-border-radius:          $border-radius;
 
